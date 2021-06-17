@@ -9,11 +9,10 @@ import {
   WebGLRenderer,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { IFCLoader } from "web-ifc-three";
+import { IFCLoader } from "web-ifc-three/IFCLoader";
 
 //Creates the Three.js scene
 const scene = new Scene();
-scene.background = new Color(0xffffff);
 
 //Object to store the size of the viewport
 const size = {
@@ -41,7 +40,7 @@ scene.add(directionalLight.target);
 
 //Sets up the renderer, fetching the canvas of the HTML
 const threeCanvas = document.getElementById("three-canvas");
-const renderer = new WebGLRenderer({ canvas: threeCanvas });
+const renderer = new WebGLRenderer({ canvas: threeCanvas, alpha: true });
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -77,7 +76,7 @@ window.addEventListener("resize", () => {
 
 //Sets up the IFC loading
 const ifcLoader = new IFCLoader();
-ifcLoader.setWasmPath("wasm/");
+ifcLoader.setWasmPath("../");
 
 const input = document.getElementById("file-input");
 input.addEventListener(

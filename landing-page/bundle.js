@@ -71385,9 +71385,9 @@ const size = {
 
 //Creates the camera (point of view of the user)
 const camera = new PerspectiveCamera(75, size.width / size.height);
-camera.position.z = 3;
-camera.position.y = 3;
-camera.position.x = 3;
+camera.position.z = 12;
+camera.position.y = 1.8;
+camera.position.x = 6;
 
 //Creates the lights of the scene
 const lightColor = 0xffffff;
@@ -71419,6 +71419,7 @@ scene.add(axes);
 //Creates the orbit controls (to navigate the scene)
 const controls = new OrbitControls(camera, threeCanvas);
 controls.enableDamping = true;
+controls.target.set(-2, 0, 0);
 
 //Animation loop
 const animate = () => {
@@ -71438,16 +71439,7 @@ window.addEventListener("resize", () => {
 });
 
 //Sets up the IFC loading
+
 const ifcLoader = new IFCLoader();
 ifcLoader.setWasmPath("../");
-
-const input = document.getElementById("file-input");
-input.addEventListener(
-  "change",
-  (changed) => {
-    var ifcURL = URL.createObjectURL(changed.target.files[0]);
-    console.log(ifcURL);
-    ifcLoader.load(ifcURL, (geometry) => scene.add(geometry));
-  },
-  false
-);
+ifcLoader.load("../ifc-models/TESTED_Simple_project_01.ifc", (geometry) => scene.add(geometry));
