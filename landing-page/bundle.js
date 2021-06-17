@@ -71397,6 +71397,7 @@ scene.add(ambientLight);
 
 const directionalLight = new DirectionalLight(lightColor, 1);
 directionalLight.position.set(0, 10, 0);
+directionalLight.target.position.set(-5, 0, 0);
 scene.add(directionalLight);
 scene.add(directionalLight.target);
 
@@ -71418,6 +71419,7 @@ scene.add(axes);
 //Creates the orbit controls (to navigate the scene)
 const controls = new OrbitControls(camera, threeCanvas);
 controls.enableDamping = true;
+controls.target.set(-3, 0, 0);
 
 //Animation loop
 const animate = () => {
