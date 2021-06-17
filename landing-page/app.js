@@ -23,9 +23,9 @@ const size = {
 
 //Creates the camera (point of view of the user)
 const camera = new PerspectiveCamera(75, size.width / size.height);
-camera.position.z = 14;
+camera.position.z = 18;
 camera.position.y = 1.8;
-camera.position.x = 8;
+camera.position.x = 10;
 
 //Creates the lights of the scene
 const lightColor = 0xffffff;
