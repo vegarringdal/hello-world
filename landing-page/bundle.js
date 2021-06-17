@@ -71385,9 +71385,9 @@ const size = {
 
 //Creates the camera (point of view of the user)
 const camera = new PerspectiveCamera(75, size.width / size.height);
-camera.position.z = 12;
-camera.position.y = 12;
-camera.position.x = 8.5;
+camera.position.z = 13;
+camera.position.y = 13;
+camera.position.x = 9.5;
 
 //Creates the lights of the scene
 const lightColor = 0xffffff;
@@ -71419,7 +71419,7 @@ scene.add(axes);
 //Creates the orbit controls (to navigate the scene)
 const controls = new OrbitControls(camera, threeCanvas);
 controls.enableDamping = true;
-controls.target.set(-6, 0, 0);
+controls.target.set(-5, 0, 0);
 
 //Animation loop
 const animate = () => {
