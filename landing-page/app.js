@@ -56,7 +56,6 @@ scene.add(axes);
 //Creates the orbit controls (to navigate the scene)
 const controls = new OrbitControls(camera, threeCanvas);
 controls.enableDamping = true;
-controls.target.set(-5, 0, 0);
 
 //Animation loop
 const animate = () => {
