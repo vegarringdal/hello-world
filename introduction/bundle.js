@@ -71442,10 +71442,7 @@ window.addEventListener("resize", () => {
 
 const ifcLoader = new IFCLoader();
 ifcLoader.setWasmPath("../");
-
-async function loadIfcFile(){
-  await fetch("https://raw.githubusercontent.com/agviegas/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc");
-  ifcLoader.load("../ifc-models/TESTED_Simple_project_01.ifc", (geometry) => scene.add(geometry));
-}
+const url = "https://raw.githubusercontent.com/IFCjs/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc";
+ifcLoader.load(url, (geometry) => scene.add(geometry));
 
 loadIfcFile();
