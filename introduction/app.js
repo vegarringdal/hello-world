@@ -82,5 +82,3 @@ const ifcLoader = new IFCLoader();
 ifcLoader.setWasmPath("../");
 const url = "https://raw.githubusercontent.com/IFCjs/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc";
 ifcLoader.load(url, (geometry) => scene.add(geometry));
-
-loadIfcFile();
