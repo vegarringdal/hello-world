@@ -71437,10 +71437,10 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
   renderer.setSize(size.width, size.height);
 });
-
-//Sets up the IFC loading
-
 const ifcLoader = new IFCLoader();
 ifcLoader.setWasmPath("../");
 const url = "https://raw.githubusercontent.com/IFCjs/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc";
-ifcLoader.load(url, (geometry) => scene.add(geometry));
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  ifcLoader.load(url, (geometry) => scene.add(geometry));
+});
