@@ -71446,10 +71446,12 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
   try{
     const response = await fetch(url);
+    alert(response.ok);
+    alert(response.statusText);
     const buffer = await response.arrayBuffer();
     const geo = await ifcLoader.parse(buffer);
     scene.add(geo);
-    alert("ok");
+    
   } catch(ee){
     alert(ee);
   }
