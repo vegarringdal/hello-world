@@ -71444,9 +71444,15 @@ const url =
 
 window.addEventListener("DOMContentLoaded", async (event) => {
 
-  const response = await fetch(url);
-  const buffer = await response.arrayBuffer();
-  const geo = await ifcLoader.parse(buffer);
-  scene.add(geo);
+  try{
+    const response = await fetch(url);
+    const buffer = await response.arrayBuffer();
+    const geo = await ifcLoader.parse(buffer);
+    scene.add(geo);
+    alert("ok");
+  } catch(ee){
+    alert(ee);
+  }
+  
 
 });
