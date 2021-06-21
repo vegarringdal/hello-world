@@ -71439,9 +71439,13 @@ window.addEventListener("resize", () => {
 });
 const ifcLoader = new IFCLoader();
 ifcLoader.setWasmPath("../");
-const url = "https://raw.githubusercontent.com/IFCjs/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc";
+const url =
+  "https://raw.githubusercontent.com/IFCjs/test-ifc-files/main/Revit/TESTED_Simple_project_01.ifc";
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  alert("test");
-  ifcLoader.load(url, (geometry) => scene.add(geometry));
+window.addEventListener("DOMContentLoaded", (event) => {
+
+  ifcLoader.load(url, (geometry) => {
+ alert(geometry);
+    scene.add(geometry);
+  });
 });
