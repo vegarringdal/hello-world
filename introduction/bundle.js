@@ -71446,10 +71446,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
 
   const response = await fetch(url);
   const buffer = await response.arrayBuffer();
-  alert(buffer?.byteLength);
+  const geo = await ifcLoader.parse(buffer);
+  scene.add(geo);
 
- /*  ifcLoader.load(url, (geometry) => {
- alert(geometry)
-    scene.add(geometry);
-  }); */
 });
